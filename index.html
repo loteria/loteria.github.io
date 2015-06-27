@@ -5,15 +5,76 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Loteria urodzinowa</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </head>
     <body>
+        <div id="main" class="container">
+          <h1 class="text-center">Wielka loteria urodzinowa</h1>
+
+          <div class="form-group">
+              <label for="kod">Wpisz swój kod</label>
+              <input type="text" class="form-control" id="kod" placeholder="Kod">
+            </div>
+            <button type="button" class="btn btn-primary">Wyślij</button>
+
+          <h3>Zasady</h3>
+
+          <ol>
+              <li>Loteria trwa do 28.06.2015, do godziny 22.00</li>
+              <li>Nagrodę możesz odebrać w dowolnym terminie</li>
+          </ol>
+        </div>
+        <div id="bad" class="container">
+            <h2>Niestety... Spróbuj ponownie</h2>
+        </div>
+        <div id="result" class="container text-center">
+            <h2>Wygrałaś</h2>
+
+            <h3>Twoja nagroda to:</h3>
+
+            <h1>Wycieczka zagraniczna!</h1>
+        </div>
+    </body>
+    <script type="text/javascript">
+    $('button').on('click', function (e) {
+        $('#main').hide();
+    if($('input').val() === 'QkPeRWs') {
+        $('#result').show();
+        $('body').css('background-image','url("beach.jpg")');    } else {
+        $('#bad').show();
+    }
+});
+    </script>
+    <style media="screen">
+        body {
+            color: #563d7c;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        #result {
+            color: white;
+            display: none;
+        }
+
+        #result h1 {
+            font-size: 66px;
+        }
+
+        #bad {
+            display: none;
+        }
+
+        #main {
+        }
+    </style>
 </html>
